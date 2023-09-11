@@ -11,8 +11,6 @@ Before using this module, ensure you have the following:
 - Terragrunt (optional, for bonus points)
 - aws provider 5.16.1 (latest)
 
-
-
 ## Task List Completion
 
 - [x] Write Terraform module to host public Nginx server on AWS Fargate
@@ -34,11 +32,14 @@ Before using this module, ensure you have the following:
 
 - **Auto Scaling**: TargetTrackingScaling strategy, scale up when cpu > 80%, memory > 60%
 
+## Resource Module (terraform)
+- Link: https://github.com/LanceXuanLi/nginx-fargate-resource-module
+- README: https://github.com/LanceXuanLi/nginx-fargate-resource-module/blob/master/README.md
+
 ## Structure
 ![](Nginx%20Diagram.drawio.png)
 
-## Details 
-
+## Details
 - vpc 
   - x public subnets with x private subnets in x zones
   - 2 security groups, one for alb, another for ecs
@@ -71,6 +72,7 @@ Before using this module, ensure you have the following:
   - TargetTrackingScaling
     - scale up when cpu > 80%
     - scale up when memory > 60%
+
 ## Authors
 
 - Lance Li <lance.nanxuanli@gmail.com>
