@@ -36,6 +36,7 @@ Before using this module, ensure you have the following:
 
 https://github.com/LanceXuanLi/nginx-fargate-terraform-module/assets/15911068/4c0020b4-a75c-4aac-ad44-cfc35e73c277
 
+`oha -n 2000 --burst-delay 2s --burst-rate 30 http://sapia-qa-1344606689.ap-southeast-2.elb.amazonaws.com` means that I sent 2000 HTTP requests to the specified URL, with bursts of 30 requests per second, and a 2-second delay between bursts.\
 The rate-based statement currently stops processing requests after 41 seconds, in accordance with AWS documentation, which specifies that WAF evaluates rates every 30 seconds. I've already reported this issue to AWS support, and any updates they provide will be posted here.\
 \
 *"AWS WAF checks the rate of requests every 30 seconds, and counts requests for the prior 5 minutes each time. Because of this, it's possible for an aggregation instance to have requests coming in at too high a rate for up to 30 seconds before AWS WAF detects and rate limits the requests for the instance. Similarly. the request rate can be below the limit for up to 30 seconds before AWS WAF detects the decrease and discontinues rate limiting for the instance."*  Referenced from  https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based-request-limiting.html
